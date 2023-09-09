@@ -1,0 +1,30 @@
+.characters__main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--color-gris);
+
+}
+
+.characters__card{
+    margin: 2rem;
+    padding-bottom: 2.5rem;
+    border: 3px solid var(--color-verde2);
+    border-radius: 130px;
+
+    background-color: var(--color-verde-transparent);
+    
+    overflow: hidden;
+
+}
+
+.characters__img{
+    border-bottom: 3px solid var(--color-verde2);;
+}
+
+.characters__description{
+    padding-left: 1.5rem;
+}
+
