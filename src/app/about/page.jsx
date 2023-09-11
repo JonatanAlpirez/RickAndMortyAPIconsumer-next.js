@@ -1,9 +1,20 @@
+import styles from './styles.module.css'
+
+
 function AboutComponent() {
     return (  
         
-        <div>
-            <h1>About</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos unde in odio pariatur nesciunt quasi non! Delectus laborum obcaecati, ipsa sed at repellat eveniet suscipit dolorem, totam nobis est in sequi. Expedita, esse assumenda voluptatem libero magni aspernatur amet ipsa quam consequatur alias ea, quae ad impedit ut, laudantium aut blanditiis temporibus. Non magni assumenda quaerat sed explicabo delectus consectetur ex corrupti ea quis maxime dolorem, laboriosam iste nostrum cum consequuntur! Quam quis debitis ratione suscipit. Blanditiis quisquam dolor maxime veritatis? Eveniet commodi nulla sapiente cupiditate nam quae ea, explicabo aperiam, perspiciatis temporibus repudiandae debitis unde molestias, molestiae consequuntur sed.</p>
+        <div className={styles.content__about}>
+            <h1 className={styles.content__title}>About</h1>
+            <p className={styles.content__info}>
+                Hola!! <br />
+
+                Este es un consumidor de la API Rick and Morty(https://rickandmortyapi.com/). Donde obtiene la información . <br />
+
+                Rick and Morty es creado por Justin Roiland y Dan Harmon para Adult Swim. Los datos y las imágenes fueron usadas sin los derechos de propiedad los cuales pertenecen a sus respectivos creadores. <br />
+
+                
+            </p>
         </div>
     );
 }

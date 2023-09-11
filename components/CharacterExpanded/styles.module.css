@@ -1,0 +1,28 @@
+.character__main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.character__card {
+  margin-top: 6rem;
+  border: 3px solid var(--color-secondary2);
+  border-radius: 100px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.character__info {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 3rem;
+}

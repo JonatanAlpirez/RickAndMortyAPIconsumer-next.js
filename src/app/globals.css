@@ -1,56 +1,72 @@
-:root{
-  --color-gris: rgba(25,25,25,255);
-  --color-verde: rgba(129,194,66,255);
-  --color-verde-transparent: rgba(129,194,66,0.5);
-  --color-verde2: rgba(0,146,71,255);
+:root {
+  --color-primary: rgba(25, 25, 25, 255);
+  --color-secondary: #994677;
+  --color-secondary-transparent: rgba(88, 48, 77, 0.5);
+  --color-secondary2: rgb(119, 71, 83);
+  --color-text: #cfb6a8;
 }
 
+html {
+  font-size: 10px; /* Esto define un rem en 10px */
+  color: var(--color-text);
+  font-family: "Courier New", Courier, monospace;
+}
 
-*{
+* {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-
 }
 
 *, /* Todos los elementos antes y después*/
 *::before,
-*::after{ 
+*::after {
   box-sizing: border-box; /* Borde de caja fijo */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-
 }
 
-body{
+body {
+  display: block;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: var(--color-primary);
 }
 
-ul, ol{
+ul,
+ol {
   list-style: none;
 }
 
-a{
+a {
   display: block;
   text-decoration: none;
-  color:  inherit;
+  color: inherit;
 }
-p a{
+p a {
   display: inline;
-  color:  inherit;
+  color: inherit;
 }
 
-img, video, iframe, picture, figure{
+img,
+video,
+iframe,
+picture,
+figure {
   max-width: 100%;
-  display: block
+  display: block;
 }
 
-form, input, select, textarea, button, label{
+form,
+input,
+select,
+textarea,
+button,
+label {
   display: block;
   font-family: inherit;
   font-size: inherit;
-  color:  inherit;
+  color: inherit;
 }

@@ -1,3 +1,5 @@
+import BannerComponent from '../../components/Banner/Banner'
+import FooterComponent from '../../components/Footer/Footer'
 import NavbarComponent from '../../components/Navbar/Navbar'
 import './globals.css'
 
@@ -13,7 +15,9 @@ export default function RootLayout({ children }) {
       <body>
 
         <NavbarComponent />
+        <BannerComponent />
         {children}
+        <FooterComponent />
 
       </body>
 

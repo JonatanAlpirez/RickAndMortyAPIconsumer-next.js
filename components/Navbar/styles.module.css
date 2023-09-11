@@ -1,47 +1,41 @@
 @font-face {
-    font-family: RickandMorty;
-    src: url(./get_schwifty.ttf);
+  font-family: RickandMorty;
+  src: url(./get_schwifty.ttf);
 }
 
-.navbar{
-    display: flex;
-    flex-direction: column;
-
+.navbar {
+  width: 100%;
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.navbar__menu{
-    background-color: var(--color-gris);
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+.navbar__menu {
+  background-color: var(--color-primary);
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-.navbar__option{
-    width: 10vw;
-    
-    color: antiquewhite;
-    font-size: 1.5rem;
-    font-family: RickandMorty;
-    
-
+.navbar__option {
+  width: 10vw;
+  color: antiquewhite;
+  font-size: 2rem;
+  font-family: RickandMorty;
 }
 
-.navbar__link{
-    margin: 1.8rem 0;
+.navbar__link {
+  margin: 1.8rem 0;
 }
 
-.navbar__img{
-    width: 10vw;
+.navbar__link_img {
+  height: 100%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
-.navbar__banner{
-
-    background-color: var(--color-verde);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.navbar__img {
+  height: 100%;
 }

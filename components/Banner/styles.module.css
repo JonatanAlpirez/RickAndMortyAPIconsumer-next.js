@@ -1,0 +1,16 @@
+.banner__main {
+  height: calc(35vh - 6rem);
+
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  overflow: hidden;
+  overflow-y: hidden;
+
+  background-image: url("/banner.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

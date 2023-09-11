@@ -1,0 +1,41 @@
+.footer__main {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 3rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-primary);
+}
+
+.footer__title {
+  padding-bottom: 0.5rem;
+  display: inline;
+  width: 100vw;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-secondary2);
+}
+
+.footer__link {
+  padding: 0 1rem;
+
+  font-size: 2rem;
+  display: inline;
+  color: var(--color-secondary);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-text);
+  transition: 300ms;
+}
+
+.footer__link:hover.footer__link {
+  font-size: 2rem;
+  color: var(--color-secondary2);
+  text-decoration: none;
+}
