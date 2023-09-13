@@ -16,8 +16,23 @@
 }
 
 .content__info {
+  text-align: justify;
   width: 100%;
   max-width: 100rem;
 
   line-height: 2;
+}
+
+.content__link {
+  margin-left: 0.5rem;
+  display: inline;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-secondary);
+  transition: 300ms;
+}
+
+.content__link:hover.content__link {
+  color: var(--color-secondary2);
+  text-decoration: none;
 }

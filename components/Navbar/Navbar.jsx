@@ -16,7 +16,7 @@ function NavbarComponent() {
               </li>
 
               <li className={styles.navbar__option}>
-                <Link className={styles.navbar__link} href="/consumer">Consumer</Link>
+                <Link className={styles.navbar__link} href="/characters">Consumer</Link>
               </li>
 
             </ul>

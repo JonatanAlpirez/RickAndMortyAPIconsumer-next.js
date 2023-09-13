@@ -1,14 +1,16 @@
-.characters__main {
+.mosaic__main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: var(--color-primary);
 }
 
-.characters__card {
-  margin: 2rem;
+.mosaic__card {
+  width: 30rem;
+
+  margin: 2rem 3rem;
   padding-bottom: 2.5rem;
   border: 3px solid var(--color-secondary2);
   border-radius: 130px;
@@ -18,11 +20,11 @@
   overflow: hidden;
 }
 
-.characters__img {
+.mosaic__img {
   border-bottom: 3px solid var(--color-secondary2);
 }
 
-.characters__description {
+.mosaic__description {
   font-size: 1.5rem;
   padding-left: 2rem;
 }

@@ -8,16 +8,16 @@ function CharactersComponent({characters}) {
     const router = useRouter();
 
     return ( 
-        <ul className= {styles.characters__main}>
+        <ul className= {styles.mosaic__main}>
                 {
                     characters.map((character) => (
-                        <li className= {styles.characters__card} key={character.id} onClick={()=>{
-                            router.push(`/consumer/${character.id}`);      
+                        <li className= {styles.mosaic__card} key={character.id} onClick={()=>{
+                            router.push(`/characters/${character.id}`);      
                         }}>
-                            <div className= {styles.characters__img}>
+                            <div className= {styles.mosaic__img}>
                                 <img src={character.image} alt="" />
                             </div>
-                            <div className= {styles.characters__description}>
+                            <div className= {styles.mosaic__description}>
                                 <h4>Nombre: {character.name}</h4>
                                 <h4>Status: {character.status}</h4>
                                 <h4>Especie: {character.species}</h4>
