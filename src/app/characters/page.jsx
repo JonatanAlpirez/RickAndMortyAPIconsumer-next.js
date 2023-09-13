@@ -2,7 +2,7 @@ import CharactersComponent from "../../../components/Characters/Characters";
 import styles from './styles.module.css'
 
 async function fetchCharacters(){
-    let res = await fetch("https://rickandmortyapi.com/api/character/?name=rick&status=alive");
+    let res = await fetch("https://rickandmortyapi.com/api/character");
     let data = await res.json();
 
     let characters = [];

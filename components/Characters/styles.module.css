@@ -25,6 +25,9 @@
 }
 
 .mosaic__description {
+  width: 90%;
   font-size: 1.5rem;
-  padding-left: 2rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
 }

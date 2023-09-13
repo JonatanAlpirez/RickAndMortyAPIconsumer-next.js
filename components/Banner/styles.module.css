@@ -1,6 +1,8 @@
 .banner__main {
   height: calc(35vh - 6rem);
 
+  margin-top: 6rem;
+
   background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;

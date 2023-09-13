@@ -15,10 +15,6 @@ function NavbarComponent() {
                 <Link className={styles.navbar__link} href="/about">About</Link>
               </li>
 
-              <li className={styles.navbar__option}>
-                <Link className={styles.navbar__link} href="/characters">Consumer</Link>
-              </li>
-
             </ul>
           </header>
     );
