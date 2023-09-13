@@ -21,6 +21,7 @@
 }
 
 .mosaic__img {
+  width: 100%;
   border-bottom: 3px solid var(--color-secondary2);
 }
 

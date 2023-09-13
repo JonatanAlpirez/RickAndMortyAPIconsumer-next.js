@@ -6,8 +6,8 @@
   background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
   overflow: hidden;
   overflow-y: hidden;
 

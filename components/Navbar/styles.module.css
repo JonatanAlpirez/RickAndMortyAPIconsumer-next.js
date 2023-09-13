@@ -40,5 +40,6 @@
   align-items: center;
 }
 .navbar__img {
+  width: auto;
   height: 100%;
 }

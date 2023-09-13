@@ -2,6 +2,8 @@
 
 import styles from '../Characters/styles.module.css'
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'
+
 
 function EpisodesComponent({episodes}) {
 
@@ -14,9 +16,7 @@ function EpisodesComponent({episodes}) {
                         <li className= {styles.mosaic__card} key={episode.id} onClick={()=>{
                             router.push(`/consumer/${episode.id}`);      
                         }}>
-                            <div className= {styles.mosaic__img}>
-                                <img src={episode.image} alt="" />
-                            </div>
+    
                             <div className= {styles.mosaic__description}>
                                 <h4>Nombre: {episode.name}</h4>
                                 <h4>Air date: {episode.air_date}</h4>

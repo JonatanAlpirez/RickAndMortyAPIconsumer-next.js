@@ -2,6 +2,7 @@
 
 import styles from './styles.module.css'
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'
 
 function CharactersComponent({characters}) {
 
@@ -15,7 +16,7 @@ function CharactersComponent({characters}) {
                             router.push(`/characters/${character.id}`);      
                         }}>
                             <div className= {styles.mosaic__img}>
-                                <img src={character.image} alt="" />
+                                <Image width={300} height={300} src={character.image} alt="" />
                             </div>
                             <div className= {styles.mosaic__description}>
                                 <h4>Nombre: {character.name}</h4>

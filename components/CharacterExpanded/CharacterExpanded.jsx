@@ -1,4 +1,5 @@
 import styles from './styles.module.css'
+import Image from 'next/image'
 
 function CharacterExpandedComponent({character}) {
     
@@ -6,7 +7,7 @@ function CharacterExpandedComponent({character}) {
         <section className={styles.character__main}>
             <div className={styles.character__card}>
                 <div className={styles.character__img}>
-                    <img src={character.image} alt="image-picture" />
+                <Image width={300} height={300} src={character.image} alt="image-picture" />
                 </div>
                 <div className={styles.character__info}>
                     <h1>Name: {character.name}</h1>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './styles.module.css'
+import Image from 'next/image'
 
 function NavbarComponent() {
     return (  
@@ -7,7 +8,10 @@ function NavbarComponent() {
             <ul className={styles.navbar__menu}>
               <li className={styles.navbar__option}>
                 <Link className={styles.navbar__link_img} href="/">
-                  <img className= {styles.navbar__img} src="/icono.png" alt="" />
+                  <Image  
+                  width={500}
+                   height={500} 
+                   className= {styles.navbar__img} src="/icono.png" alt="" />
                 </Link>
               </li>
 
