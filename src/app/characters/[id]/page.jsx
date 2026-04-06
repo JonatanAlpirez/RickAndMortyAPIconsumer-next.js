@@ -1,5 +1,5 @@
 import CharacterExpandedComponent from "../../../../components/CharacterExpanded/CharacterExpanded";
-import styles from '../styles.module.css"
+import styles from "../styles.module.css"
 
 // Force dynamic rendering to avoid build errors with external API
 export const dynamic = 'force-dynamic';
