@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import CharactersComponent from "../../../components/Characters/Characters";
 import styles from './styles.module.css'
@@ -19,6 +20,18 @@ async function fetchCharacters({ pageParam = 1 }) {
 }
 
 function CharactersPageComponent() {
+    const [searchTerm, setSearchTerm] = useState("");
+    const [debouncedSearch, setDebouncedSearch] = useState("");
+
+    // Debounce search term by 300ms
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDebouncedSearch(searchTerm);
+        }, 300);
+
+        return () => clearTimeout(timer);
+    }, [searchTerm]);
+
     const {
         data,
         isLoading,
@@ -37,7 +50,15 @@ function CharactersPageComponent() {
     });
 
     // Flatten all pages into a single array of characters
-    const characters = data?.pages.flatMap(page => page.results) ?? [];
+    const allCharacters = data?.pages.flatMap(page => page.results) ?? [];
+
+    // Filter characters locally based on debounced search term
+    const characters = debouncedSearch
+        ? allCharacters.filter(char => 
+            char.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+            char.species.toLowerCase().includes(debouncedSearch.toLowerCase())
+        )
+        : allCharacters;
 
     if (isLoading) {
         return (
@@ -62,14 +83,33 @@ function CharactersPageComponent() {
 
     return (
         <div className={styles.content__consumer}>
-            <div>
-                <CharactersComponent 
-                    characters={characters} 
-                    onLoadMore={fetchNextPage}
-                    hasMore={hasNextPage}
-                    isLoadingMore={isFetchingNextPage}
+            <div style={{ padding: '10px', textAlign: 'center' }}>
+                <input
+                    type="text"
+                    placeholder="Search characters by name or species..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    style={{
+                        padding: '10px 15px',
+                        fontSize: '16px',
+                        width: '80%',
+                        maxWidth: '400px',
+                        borderRadius: '8px',
+                        border: '1px solid #ccc'
+                    }}
                 />
+                {debouncedSearch && (
+                    <p style={{ marginTop: '10px' }}>
+                        Found {characters.length} of {allCharacters.length} characters
+                    </p>
+                )}
             </div>
+            <CharactersComponent 
+                characters={characters} 
+                onLoadMore={fetchNextPage}
+                hasMore={hasNextPage && !debouncedSearch}
+                isLoadingMore={isFetchingNextPage}
+            />
         </div>
     );
 }
