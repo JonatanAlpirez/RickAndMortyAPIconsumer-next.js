@@ -4,12 +4,13 @@ import styles from './styles.module.css'
 import { useRouter } from 'next/navigation';
 import Image from 'next/image'
 
-function CharactersComponent({characters}) {
+function CharactersComponent({characters, onLoadMore, hasMore, isLoadingMore}) {
 
     const router = useRouter();
 
     return ( 
-        <ul className= {styles.mosaic__main}>
+        <>
+            <ul className= {styles.mosaic__main}>
                 {
                     characters.map((character) => (
                         <li className= {styles.mosaic__card} key={character.id} onClick={()=>{
@@ -31,6 +32,22 @@ function CharactersComponent({characters}) {
                     ))
                 }
             </ul>
+            {hasMore && (
+                <div style={{textAlign: 'center', padding: '20px'}}>
+                    <button 
+                        onClick={onLoadMore} 
+                        disabled={isLoadingMore}
+                        style={{
+                            padding: '10px 20px',
+                            fontSize: '16px',
+                            cursor: isLoadingMore ? 'not-allowed' : 'pointer'
+                        }}
+                    >
+                        {isLoadingMore ? 'Loading...' : 'Load More'}
+                    </button>
+                </div>
+            )}
+        </>
      );
 }
 

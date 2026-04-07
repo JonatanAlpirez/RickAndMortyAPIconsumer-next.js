@@ -1,38 +1,43 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import CharactersComponent from "../../../components/Characters/Characters";
 import styles from './styles.module.css'
 
 /**
- * Fetch all characters from Rick and Morty API with pagination
- * @returns {Promise<Array>} Array of characters
+ * Fetch characters page by page from Rick and Morty API
+ * @returns {Promise<Object>} Paginated characters data
  */
-async function fetchCharacters() {
-    let res = await fetch("https://rickandmortyapi.com/api/character");
-    let data = await res.json();
-
-    let characters = [];
-    characters = characters.concat(data.results);
-    let next = data.info.next;
-
-    while (next != null) {
-        res = await fetch(next);
-        data = await res.json();
-        characters = characters.concat(data.results);
-        next = data.info.next;
+async function fetchCharacters({ pageParam = 1 }) {
+    const res = await fetch(`https://rickandmortyapi.com/api/character?page=${pageParam}`);
+    
+    if (!res.ok) {
+        throw new Error(`API error: ${res.status}`);
     }
-
-    return characters;
+    
+    return res.json();
 }
 
 function CharactersPageComponent() {
-    const { data: characters, isLoading, isError, error } = useQuery({
+    const {
+        data,
+        isLoading,
+        isError,
+        error,
+        fetchNextPage,
+        hasNextPage,
+        isFetchingNextPage,
+    } = useInfiniteQuery({
         queryKey: ['characters'],
         queryFn: fetchCharacters,
-        staleTime: 5 * 60 * 1000, // 5 minutes
+        initialPageParam: 1,
+        getNextPageParam: (lastPage) => lastPage.info.next ? lastPage.info.next.split('?page=')[1] : undefined,
+        staleTime: 5 * 60 * 1000,
         retry: 2,
     });
+
+    // Flatten all pages into a single array of characters
+    const characters = data?.pages.flatMap(page => page.results) ?? [];
 
     if (isLoading) {
         return (
@@ -55,10 +60,15 @@ function CharactersPageComponent() {
         );
     }
 
-    return (  
+    return (
         <div className={styles.content__consumer}>
             <div>
-                <CharactersComponent characters={characters} />
+                <CharactersComponent 
+                    characters={characters} 
+                    onLoadMore={fetchNextPage}
+                    hasMore={hasNextPage}
+                    isLoadingMore={isFetchingNextPage}
+                />
             </div>
         </div>
     );
