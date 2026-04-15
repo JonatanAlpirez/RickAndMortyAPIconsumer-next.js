@@ -17,7 +17,9 @@ export default function RootLayout({ children }) {
         <Providers>
           <NavbarComponent />
           <BannerComponent />
-          {children}
+          <div className="content__layout">
+            {children}
+          </div>
           <FooterComponent />
         </Providers>
       </body>
