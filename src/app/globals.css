@@ -7,7 +7,8 @@
 }
 
 html {
-  font-size: 10px; /* Esto define un rem en 10px */
+  font-size: 10px;
+  /* Esto define un rem en 10px */
   color: var(--color-text);
   font-family: "Courier New", Courier, monospace;
 }
@@ -18,10 +19,12 @@ html {
   vertical-align: baseline;
 }
 
-*, /* Todos los elementos antes y después*/
+*,
+/* Todos los elementos antes y después*/
 *::before,
 *::after {
-  box-sizing: border-box; /* Borde de caja fijo */
+  box-sizing: border-box;
+  /* Borde de caja fijo */
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
@@ -45,6 +48,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 p a {
   display: inline;
   color: inherit;
@@ -69,4 +73,9 @@ label {
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+}
+
+.content__layout {
+  max-width: 1440px;
+  margin: 0 auto;
 }

@@ -14,7 +14,7 @@ function LocationsComponent({locations}) {
                 {
                     locations.map((location) => (
                         <li className= {styles.mosaic__card} key={location.id} onClick={()=>{
-                            router.push(`/locations/${location.id}`);      
+                            router.push(`/locations/${location.id}`);
                         }}>
 
                             <div className= {styles.mosaic__description}>

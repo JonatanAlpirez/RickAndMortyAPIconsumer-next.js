@@ -14,7 +14,7 @@ function EpisodesComponent({episodes}) {
                 {
                     episodes.map((episode) => (
                         <li className= {styles.mosaic__card} key={episode.id} onClick={()=>{
-                            router.push(`/episodes/${episode.id}`);      
+                            router.push(`/episodes/${episode.id}`);
                         }}>
     
                             <div className= {styles.mosaic__description}>
